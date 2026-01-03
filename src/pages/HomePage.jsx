@@ -108,19 +108,19 @@ const HomePage = () => {
       <div className="padding-x-lg my-16 max-w-5xl">
         <div className="sm:px-16 px-0">
           <motion.h3
-          variants={headingX}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true}}
+            variants={headingX}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
             className="text-lg text-primary font-medium mt-3 tracking-wider "
           >
             WHO WE ARE
           </motion.h3>
           <motion.h1
-          variants={headingY}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true}}
+            variants={headingY}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
             className="text-2xl text-primary font-semibold mt-3"
           >
             Kaufman Law is a boutique firm located in New York City that
@@ -145,7 +145,7 @@ const HomePage = () => {
           variants={headingX}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true}}
+          viewport={{ once: true }}
           className="text-3xl font-semibold mb-6 text-accent border-b-2 pb-4 w-max"
         >
           Our Services
@@ -253,10 +253,10 @@ const HomePage = () => {
       <div className="padding-x-lg my-16 ">
         <div>
           <motion.h2
-          variants={headingX}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true}}
+            variants={headingX}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
             className="text-3xl font-semibold mb-16 text-accent border-b-2 pb-4 w-max mx-auto"
           >
             Our Promise to You
@@ -284,20 +284,14 @@ const HomePage = () => {
           variants={headingY}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true}}
+          viewport={{ once: true }}
           className="text-3xl font-semibold mb-10 text-accent border-b-2 pb-4 w-max mx-auto"
         >
           Meet Our Founder
         </motion.h2>
 
         <div className="flex flex-col sm:relative px-8">
-          <div
-          // variants={headingY}
-          // initial="hidden"
-          // whileInView="visible"
-          // viewport={{ once: true}}
-            className="w-100 sm:w-1/2 border-4 border-white mx-auto sm:mx-0"
-          >
+          <div className="w-full sm:w-1/2 border-4 border-white mx-auto sm:mx-0">
             <img src="../images/personb.jpg" alt="" />
           </div>
 
