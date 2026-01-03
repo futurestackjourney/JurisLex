@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,22 +11,22 @@ const Navbar = () => {
           
           {/* Logo */}
           <div className="">
-           <a href="/">
+           <Link to="/">
             <img src="../images/logo.png" width="80" height="80" alt="" />
-           </a>
+           </Link>
           </div>
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center space-x-6 text-lg font-semibold">
-            <a href="/help" className="text-zinc-200 tracking-wide hover:text-white transition nav-link">
+            <Link to="/help" className="text-zinc-200 tracking-wide hover:text-white transition nav-link">
               How we Help
-            </a>
-            <a href="/About" className="text-zinc-200 tracking-wide hover:text-white transition nav-link">
+            </Link>
+            <Link to="/About" className="text-zinc-200 tracking-wide hover:text-white transition nav-link">
               About
-            </a>
-            <a href="/contact" className="text-zinc-200 tracking-wide hover:text-white transition nav-link">
+            </Link>
+            <Link to="/contact" className="text-zinc-200 tracking-wide hover:text-white transition nav-link">
               Contact
-            </a>
+            </Link>
            <button className="btn-nav">
             Call Us
            </button>
@@ -64,17 +65,17 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden border-t border-gray-200">
+        <div className="md:hidden bg-white/70 border-t border-gray-200">
           <div className="flex flex-col px-4 py-3 space-y-2">
-            <a href="#" className="text-gray-700 hover:text-black">
-              Home
-            </a>
-            <a href="#" className="text-gray-700 hover:text-black">
+            <Link to="/about" className="text-gray-700 hover:text-black">
+              How we Help
+            </Link>
+            <Link to="/help" className="text-gray-700 hover:text-black">
               About
-            </a>
-            <a href="#" className="text-gray-700 hover:text-black">
+            </Link>
+            <Link to="/contact" className="text-gray-700 hover:text-black">
               Contact
-            </a>
+            </Link>
           </div>
         </div>
       )}
