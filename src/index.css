@@ -1,0 +1,176 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  background-color: var(--color-Background);
+  font-family: "Roboto", sans-serif;
+}
+
+@theme {
+  --padding-x: 4rem;
+  --padding-y: 1rem;
+  --color-mint-500: oklch(0.72 0.11 178);
+  --color-primary: oklch(28.2% 0.091 267.935);
+  --color-primary-dark: oklch(19.784% 0.05708 268.751);
+  --color-Background: oklch(97% 0 0);
+  --color-surface: oklch(96.826% 0.00696 248.26);
+  --color-muted: oklch(55.439% 0.04078 257.446);
+  --color-accent: oklch(76.858% 0.1646 70.075);
+}
+
+/* @layout {
+  padding-left: var(--padding-x);
+  padding-right: var(--padding-x);
+  padding-top: var(--padding-y);
+  padding-bottom: var(--padding-y);
+} */
+
+@layer components {
+  .padding-x-lg {
+    @apply px-5 md:px-20;
+  }
+
+  .padding-x {
+    @apply px-5 md:px-10;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white font-semibold py-3 px-6 rounded-md hover:bg-[#162456b9] transition;
+  }
+  .btn-secondary {
+    @apply bg-accent text-white font-semibold py-3 px-6 rounded-md hover:bg-[#f59e0bb9] transition;
+  }
+  .btn-nav {
+    @apply bg-accent text-white font-semibold py-2 px-4 rounded-md hover:bg-[#f59e0bb9] transition;
+  }
+
+  .text-primary {
+    color: var(--color-primary-dark);
+  }
+  .text-muted {
+    color: var(--color-muted);
+  }
+
+  /* HOW WE HELP */
+  .grid-icon {
+    @apply text-accent w-40 h-40 sm:w-22 sm:h-22 size-10 mb-4 bg-primary rounded-full flex items-center justify-center mx-auto;
+  }
+  .grid-icon .icon {
+    @apply h-24 w-24 sm:w-12 sm:h-12;
+  }
+}
+
+/* NAVBAR */
+.nav-link {
+  position: relative;
+  padding-bottom: 4px;
+  /* color: inherit; */
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-surface);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::before {
+  width: 100%;
+}
+
+/* HERO SECTION */
+.hero-section {
+  background-image: url("../images/bgCover.jpg");
+  /* clip-path: polygon(100% 0, 100% 83%, 81% 83%, 69% 100%, 22% 100%, 0 72%, 0 0); */
+  clip-path: polygon(100% 0, 100% 81%, 81% 81%, 69% 100%, 19% 100%, 0 78%, 0 0);
+}
+@media (max-width: 768px) {
+  .hero-section {
+    clip-path: polygon(
+      100% 0,
+      100% 41%,
+      100% 69%,
+      100% 100%,
+      0 99%,
+      0 42%,
+      0 0
+    );
+  }
+}
+
+.hero-title {
+  background-image: linear-gradient(
+    to top,
+    rgb(148, 148, 148),
+    rgb(56, 56, 102)
+  ); /* Define the gradient */
+  -webkit-background-clip: text; /* Clip background to the text (WebKit) */
+  background-clip: text; /* Clip background to the text (standard) */
+  -webkit-text-fill-color: transparent; /* Make text transparent (WebKit) */
+  color: transparent; /* Make text transparent (standard fallback) */
+}
+
+/* FOUNDER SECTION */
+.foundersec {
+  clip-path: polygon(73% 0, 81% 21%, 100% 22%, 100% 100%, 0 100%, 0 35%, 15% 0);
+}
+
+@media (max-width: 768px) {
+  .foundersec {
+    clip-path: polygon(100% 0, 100% 0%, 100% 100%, 0 100%, 0 15%, 15% 0);
+  }
+}
+
+/* ABOUT PAGE */
+.AboutBanner {
+  background-image: url("../images/aboutbg.jpg");
+  clip-path: polygon(100% 0, 100% 81%, 81% 81%, 69% 100%, 19% 100%, 0 78%, 0 0);
+}
+
+/* HELP PAGE */
+.helpPage {
+  background-image: url("../images/helpbg.jpg");
+  clip-path: polygon(100% 0, 100% 81%, 81% 81%, 69% 100%, 19% 100%, 0 78%, 0 0);
+}
+
+/* CONTACT PAGE */
+.contactBanner {
+  background-image: url("../images/helpbg.jpg");
+  clip-path: polygon(100% 0, 100% 81%, 81% 81%, 69% 100%, 19% 100%, 0 78%, 0 0);
+}
+
+.form-group {
+  margin-bottom: 0.8em;
+}
+.form-group label {
+  color: var(--color-primary);
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: var(--color-surface);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: transparent;
+  box-shadow: 0 0 4px 2px #ffbd4a;
+  color: #1624568e;
+}
